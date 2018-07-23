@@ -16,6 +16,10 @@ extra-source-files:  README.md
 executable heap
   hs-source-dirs:      src
   main-is:             Main.hs
+  ghc-options:    -Wall -threaded -O2 -rtsopts -with-rtsopts=-N
+  extensions:     OverloadedStrings
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                        , scotty
+                       , http-types
+                       , containers
