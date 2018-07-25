@@ -8,13 +8,14 @@ import Control.Concurrent.MVar
 import qualified Data.Map.Strict as M
 import Network.HTTP.Types
 import Control.Monad.IO.Class
+import HeapImpl
 
 
 type Name = String
 
-type Heap = String
+type HeapName = String
 
-allHeaps :: M.Map Name [Heap]
+allHeaps :: M.Map Name [HeapName]
 allHeaps = M.fromList
     [ ("Heap1",
         [ "1" , "2" , "3" , "4" , "5" , "6"]
@@ -30,7 +31,7 @@ allHeaps = M.fromList
 validateName :: Name -> Bool
 validateName = const True
 
-validateHeaps :: [Heap] -> Bool
+validateHeaps :: [HeapName] -> Bool
 validateHeaps heaps = length heaps == 6
 
 main :: IO ()
