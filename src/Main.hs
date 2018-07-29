@@ -8,8 +8,8 @@ import Control.Concurrent.MVar
 import qualified Data.Map.Strict as M
 import Network.HTTP.Types
 import Control.Monad.IO.Class
-import qualified HeapImpl as Heap
-import qualified TeamInfo as Team
+import HeapImpl as Heap
+import TeamInfo as Team
 import System.Environment
 import Control.Monad
 
