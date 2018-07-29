@@ -25,4 +25,4 @@ executable heap
                        , containers
                        , wai-extra
                        , wai-middleware-static
-                       , heroku
+                       , heroku 0.1.2.3
