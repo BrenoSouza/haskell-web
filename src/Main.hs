@@ -13,6 +13,8 @@ import TeamInfo as Team
 import System.Environment          (getEnv)
 import Control.Monad
 
+import Network.Wai.Middleware.Cors
+
 type Name = String
 
 type HeapName = String
@@ -42,6 +44,8 @@ main = do
 
     port <- liftM read $ getEnv "PORT"
     scotty port $ do
+
+        middleware simpleCors
 
         get "/heaps" $ do
             heaps <- liftIO $ readMVar heaps'
