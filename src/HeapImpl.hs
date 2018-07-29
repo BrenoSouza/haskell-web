@@ -33,7 +33,7 @@ merge heap1@(HP element1 _ left1 right1) heap2@(HP element2 _ left2 right2)
   | element1 <= element2 = makeHP element1 left1 (merge right1 heap2)
   | otherwise = makeHP element2 left2 (merge heap1 right2)
 
--- Merge Heap with root node containing element
+--Merge Heap with root node containing element
 insHeap :: (Ord a) => a -> Heap a -> Heap a
 insHeap element heap = merge (HP element 1 EmptyHP EmptyHP) heap
 
