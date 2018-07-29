@@ -1,0 +1,300 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-29 16:53:39.6313049 UTC
+
+interface main:TeamInfo 8043
+  interface hash: 126b2940d8dc80de0f0cbbaf33374f7d
+  ABI hash: 8ab146f9f10eb483e8fdfd7503795e32
+  export-list hash: 54ad17400a403d23184e7e85ed5314f5
+  orphan hash: 45cdbcbfa9fc2c5b09a2aa09c1532a59
+  flag hash: d4f10714787157b039ebec0245d4421d
+  opt_hash: 2c98c95d41c045ae9c2fb565ec8aabc6
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  TeamInfo.getMembers
+module dependencies:
+package dependencies: array-0.5.2.0 base-4.11.1.0*
+                      containers-0.5.11.0 deepseq-1.4.3.0 ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0
+orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Complex base-4.11.1.0:Data.Functor.Compose
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Set.Internal
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  containers-0.5.11.0:Data.Map.Internal a2314ee57e16ff1fe3af08500b455e81
+import  -/  containers-0.5.11.0:Data.Map.Strict ea9cec0dc7e4353594a3f7d520e82c83
+import  -/  containers-0.5.11.0:Data.Map.Strict.Internal 9061dd54223c7e14ff6837ade55c2970
+43e0e56871acba982002d2a8be0b0e6c
+  $sfromList ::
+    [(TeamInfo.Member, a)] -> Data.Map.Internal.Map TeamInfo.Member a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a (ds :: [(TeamInfo.Member, a)]) ->
+                 case ds of wild {
+                   [] -> Data.Map.Internal.Tip @ TeamInfo.Member @ a
+                   : ds1 ds2
+                   -> case ds1 of wild1 { (,) kx x ->
+                      case ds2 of wild2 {
+                        []
+                        -> case x of x1 { DEFAULT ->
+                           case kx of dt { DEFAULT ->
+                           Data.Map.Internal.Bin
+                             @ TeamInfo.Member
+                             @ a
+                             1#
+                             dt
+                             x1
+                             (Data.Map.Internal.Tip @ TeamInfo.Member @ a)
+                             (Data.Map.Internal.Tip @ TeamInfo.Member @ a) } }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds3 ->
+                           case GHC.Classes.$fOrd[]_$s$ccompare1 kx ky of wild4 {
+                             DEFAULT
+                             -> case x of x0 { DEFAULT ->
+                                case kx of dt { DEFAULT ->
+                                TeamInfo.$sfromList_$spoly_go9
+                                  @ a
+                                  ky
+                                  ds3
+                                  ipv1
+                                  (Data.Map.Internal.Bin
+                                     @ TeamInfo.Member
+                                     @ a
+                                     1#
+                                     dt
+                                     x0
+                                     (Data.Map.Internal.Tip @ TeamInfo.Member @ a)
+                                     (Data.Map.Internal.Tip @ TeamInfo.Member @ a)) } }
+                             GHC.Types.LT
+                             -> case x of x0 { DEFAULT ->
+                                case kx of dt { DEFAULT ->
+                                TeamInfo.$sfromList_$s$wpoly_go8
+                                  @ a
+                                  ky
+                                  ds3
+                                  ipv1
+                                  (Data.Map.Internal.Bin
+                                     @ TeamInfo.Member
+                                     @ a
+                                     1#
+                                     dt
+                                     x0
+                                     (Data.Map.Internal.Tip @ TeamInfo.Member @ a)
+                                     (Data.Map.Internal.Tip @ TeamInfo.Member @ a))
+                                  1# } } } } } } }) -}
+22315112f719aca51eddc85d9745ef6a
+  $sfromList_$s$wpoly_go8 ::
+    [GHC.Types.Char]
+    -> a
+    -> [([GHC.Types.Char], a)]
+    -> Data.Map.Internal.Map [GHC.Types.Char] a
+    -> GHC.Prim.Int#
+    -> Data.Map.Internal.Map TeamInfo.Member a
+  {- Arity: 5, Strictness: <S,U><S,1*U><S,1*U><S,1*U><L,U> -}
+f53f1ba42348e84d3f72bf6af5e8d7c1
+  $sfromList_$spoly_go9 ::
+    [GHC.Types.Char]
+    -> a
+    -> [([GHC.Types.Char], a)]
+    -> Data.Map.Internal.Map [GHC.Types.Char] a
+    -> Data.Map.Internal.Map TeamInfo.Member a
+  {- Arity: 4, Strictness: <S,1*U><S,1*U><S,1*U><S,1*U> -}
+e027ad92196b314a2beeaea2da32c8ad
+  $sinsert_$sgo8 ::
+    TeamInfo.Member
+    -> a1
+    -> Data.Map.Internal.Map TeamInfo.Member a1
+    -> Data.Map.Internal.Map TeamInfo.Member a1
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><S,1*U> -}
+d1ba7cd7c8f5b40bf502c19abd8e22cc
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   TeamInfo.$trModule3
+                   TeamInfo.$trModule1) -}
+a282fc66992252de8311c45a3befa44e
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS TeamInfo.$trModule2) -}
+e616bef7a9da3a5a1a6520b1278a9cd2
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("TeamInfo"#) -}
+2cbda635f3c2a93f6063e194140db072
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS TeamInfo.$trModule4) -}
+dac644a1f87575335292bf76b255840a
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+f150a7a7d59fbaf3bce67bcfceb7064b
+  type Member = GHC.Base.String
+f84b85eeef45513c94409c4db69539da
+  type MemberInfo = (GHC.Base.String, GHC.Types.Int)
+2ddee0c33b243b74bacb2f77bffd841c
+  getMembers ::
+    Data.Map.Internal.Map TeamInfo.Member [TeamInfo.MemberInfo]
+  {- Unfolding: (TeamInfo.$sfromList
+                   @ [(GHC.Base.String, GHC.Types.Int)]
+                   TeamInfo.getMembers1) -}
+031dced47e103fad927aef99a5214b7a
+  getMembers1 ::
+    [(TeamInfo.Member, [(GHC.Base.String, GHC.Types.Int)])]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (TeamInfo.Member, [(GHC.Base.String, GHC.Types.Int)])
+                   TeamInfo.getMembers21
+                   TeamInfo.getMembers2) -}
+248d6e89da3f8227d3a6cf94464bf6d3
+  getMembers10 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Web-front"#) -}
+4a6288d38fe5fbe336411c0fb005de5b
+  getMembers11 :: ([GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers13, TeamInfo.getMembers12)) -}
+9ea9e803ac71ed69e05ccf9aad98b352
+  getMembers12 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 25#) -}
+3070db6e5cd6083629a2713ab9eb6f66
+  getMembers13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# TeamInfo.getMembers14) -}
+2fbdfc9b8dbc7c410250675988f344b9
+  getMembers14 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Web-back"#) -}
+ed7063931ef1e91a8ece5601d93fd00d
+  getMembers15 :: ([GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers17, TeamInfo.getMembers16)) -}
+f9ad42803eef46bf9868bf3accf2fe07
+  getMembers16 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 75#) -}
+85ea41c137eb04a651cce968e11cb035
+  getMembers17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# TeamInfo.getMembers18) -}
+c4979c20ed94267c65ffd6fdc6c0f0c4
+  getMembers18 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Heap"#) -}
+356f0c00156cc41a90d5990c59686f94
+  getMembers19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# TeamInfo.getMembers20) -}
+9629f9d4bbef71a4c2771695a027965e
+  getMembers2 ::
+    [(TeamInfo.Member, [(GHC.Base.String, GHC.Types.Int)])]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (TeamInfo.Member, [(GHC.Base.String, GHC.Types.Int)])
+                   TeamInfo.getMembers3
+                   (GHC.Types.[]
+                      @ (TeamInfo.Member, [(GHC.Base.String, GHC.Types.Int)]))) -}
+ad162361e5bdc7ff6a9aaa1e6811c278
+  getMembers20 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Ronaldo Pessoa"#) -}
+9f5b2678dcfff3b77ee44217d9091d80
+  getMembers21 ::
+    ([GHC.Types.Char], [(GHC.Base.String, GHC.Types.Int)])
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers30, TeamInfo.getMembers22)) -}
+ef3953d8fa0b948c5a8f0429680acacb
+  getMembers22 :: [(GHC.Base.String, GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Types.Int)
+                   TeamInfo.getMembers28
+                   TeamInfo.getMembers23) -}
+d8cc680201b6ca778d84eec7c9d9fece
+  getMembers23 :: [(GHC.Base.String, GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Types.Int)
+                   TeamInfo.getMembers27
+                   TeamInfo.getMembers24) -}
+d19efa426139b5513a6b6a359ea491e4
+  getMembers24 :: [(GHC.Base.String, GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Types.Int)
+                   TeamInfo.getMembers25
+                   (GHC.Types.[] @ (GHC.Base.String, GHC.Types.Int))) -}
+275198b49dfdaf33377433acbf76a5b2
+  getMembers25 :: ([GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers9, TeamInfo.getMembers26)) -}
+9e6c5fb9d068ffd2c3872ae062277483
+  getMembers26 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 90#) -}
+bfa8710c802e0ede8195b3c90497b63c
+  getMembers27 :: ([GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers13, TeamInfo.getMembers16)) -}
+5a590001a5038984a220580f25ebcddb
+  getMembers28 :: ([GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers17, TeamInfo.getMembers29)) -}
+824647b3e1fa39bfbe44d4f2296b2e18
+  getMembers29 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 35#) -}
+f71a94fd056fb81459148548df59b1c9
+  getMembers3 ::
+    ([GHC.Types.Char], [(GHC.Base.String, GHC.Types.Int)])
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers19, TeamInfo.getMembers4)) -}
+59e04ec3a776aece678371060ec17505
+  getMembers30 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8#
+                   TeamInfo.getMembers31) -}
+1a0c5b9e7884065630863cd30da59a41
+  getMembers31 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Jos\\195\\169 Breno"#) -}
+187b1d22ce5fc30567cd8fc976ec1c47
+  getMembers4 :: [(GHC.Base.String, GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Types.Int)
+                   TeamInfo.getMembers15
+                   TeamInfo.getMembers5) -}
+b5798bf1fabbebb781f6752101cb221e
+  getMembers5 :: [(GHC.Base.String, GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Types.Int)
+                   TeamInfo.getMembers11
+                   TeamInfo.getMembers6) -}
+cf346817caf59ed89fde6f92dc72edef
+  getMembers6 :: [(GHC.Base.String, GHC.Types.Int)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (GHC.Base.String, GHC.Types.Int)
+                   TeamInfo.getMembers7
+                   (GHC.Types.[] @ (GHC.Base.String, GHC.Types.Int))) -}
+cfc196380f28065caf2e99d4862b9141
+  getMembers7 :: ([GHC.Types.Char], GHC.Types.Int)
+  {- Strictness: m,
+     Unfolding: ((TeamInfo.getMembers9, TeamInfo.getMembers8)) -}
+96b04258f1a3344ee8ff1bd9b064fb59
+  getMembers8 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+8f7ebdbcdebd37368c1751d1ffca8db4
+  getMembers9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# TeamInfo.getMembers10) -}
+"SPEC/TeamInfo fromList @ Member _" [orphan] forall @ a
+                                                    ($dOrd :: GHC.Classes.Ord TeamInfo.Member)
+  Data.Map.Strict.Internal.fromList @ [GHC.Types.Char] @ a $dOrd
+  = TeamInfo.$sfromList @ a
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
