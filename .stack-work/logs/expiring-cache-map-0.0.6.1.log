@@ -1,0 +1,13 @@
+Configuring expiring-cache-map-0.0.6.1...
+Preprocessing library for expiring-cache-map-0.0.6.1..
+Building library for expiring-cache-map-0.0.6.1..
+[1 of 7] Compiling Caching.ExpiringCacheMap.Utils.TestSequence ( Caching\ExpiringCacheMap\Utils\TestSequence.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\Utils\TestSequence.o )
+[2 of 7] Compiling Caching.ExpiringCacheMap.Utils.Types ( Caching\ExpiringCacheMap\Utils\Types.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\Utils\Types.o )
+[3 of 7] Compiling Caching.ExpiringCacheMap.Internal.Types ( Caching\ExpiringCacheMap\Internal\Types.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\Internal\Types.o )
+[4 of 7] Compiling Caching.ExpiringCacheMap.Types ( Caching\ExpiringCacheMap\Types.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\Types.o )
+[5 of 7] Compiling Caching.ExpiringCacheMap.Internal.Internal ( Caching\ExpiringCacheMap\Internal\Internal.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\Internal\Internal.o )
+[6 of 7] Compiling Caching.ExpiringCacheMap.OrdECM ( Caching\ExpiringCacheMap\OrdECM.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\OrdECM.o )
+[7 of 7] Compiling Caching.ExpiringCacheMap.HashECM ( Caching\ExpiringCacheMap\HashECM.hs, .stack-work\dist\7d103d30\build\Caching\ExpiringCacheMap\HashECM.o )
+ignoring (possibly broken) abi-depends field for packages
+Installing library in C:\sr\snapshots\3e65911d\lib\x86_64-windows-ghc-8.4.3\expiring-cache-map-0.0.6.1-3TokoI2XjEeK4vURqQVo91
+Registering library for expiring-cache-map-0.0.6.1..

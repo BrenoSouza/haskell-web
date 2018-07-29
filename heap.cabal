@@ -23,3 +23,5 @@ executable heap
                        , scotty
                        , http-types
                        , containers
+                       , wai-extra
+                       , wai-middleware-static

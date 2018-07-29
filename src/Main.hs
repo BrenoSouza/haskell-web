@@ -8,8 +8,10 @@ import Control.Concurrent.MVar
 import qualified Data.Map.Strict as M
 import Network.HTTP.Types
 import Control.Monad.IO.Class
-import HeapImpl
-
+import qualified HeapImpl as Heap
+import qualified TeamInfo as Team
+import System.Environment
+import Control.Monad
 
 type Name = String
 
@@ -38,11 +40,12 @@ main :: IO ()
 main = do
     heaps' <- newMVar allHeaps
 
-    scotty 3000 $ do
+    port <- liftM read $ getEnv "PORT"
+    scotty port $ do
 
         get "/heaps" $ do
             heaps <- liftIO $ readMVar heaps'
-            json heaps
+            json $ heaps
 
         get "/heaps/:name" $ do
             heaps <- liftIO $ readMVar heaps'
@@ -82,3 +85,7 @@ main = do
             liftIO $ modifyMVar_ heaps' $ \heaps ->
                 return $ M.delete name heaps
 
+
+        get "/team" $ do
+            json $ Team.getMembers
+        

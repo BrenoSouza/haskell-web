@@ -1,0 +1,7 @@
+Configuring mime-types-0.1.0.8...
+Preprocessing library for mime-types-0.1.0.8..
+Building library for mime-types-0.1.0.8..
+[1 of 1] Compiling Network.Mime     ( Network\Mime.hs, .stack-work\dist\7d103d30\build\Network\Mime.o )
+ignoring (possibly broken) abi-depends field for packages
+Installing library in C:\sr\snapshots\3e65911d\lib\x86_64-windows-ghc-8.4.3\mime-types-0.1.0.8-LKKvOy4Qa71IxJa0ssc0G3
+Registering library for mime-types-0.1.0.8..

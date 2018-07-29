@@ -1,0 +1,439 @@
+
+==================== FINAL INTERFACE ====================
+2018-07-23 03:21:13.5938362 UTC
+
+interface main:Heap 8043
+  interface hash: 1f4cbb5023c38de46adcd05560568f16
+  ABI hash: 9eed88904852533f9b198b4c3100ca40
+  export-list hash: 5caa656f827ea39ce524e9cc5937fb57
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d4f10714787157b039ebec0245d4421d
+  opt_hash: 2c98c95d41c045ae9c2fb565ec8aabc6
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Heap.delHeap
+  Heap.emptyHeap
+  Heap.findHeap
+  Heap.heapEmpty
+  Heap.insHeap
+  Heap.Heap
+module dependencies:
+package dependencies: base-4.11.1.0* ghc-prim-0.5.2.0
+                      integer-gmp-1.0.2.0
+orphans: base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity base-4.11.1.0:Data.Monoid
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:GHC.Generics
+                         base-4.11.1.0:GHC.IO.Exception
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.Err 97cd376c529926d7dcbd3f06020fe0fc
+import  -/  base-4.11.1.0:GHC.Num 5de8df0185e7e8d8ec29b3c61e2c8606
+import  -/  base-4.11.1.0:GHC.Show 6211aec7cccd267a5ee999e4414d7b90
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  ghc-prim-0.5.2.0:GHC.Classes f7d67fd97d5a20e9252c9597d1aa387b
+a45f09cd16b1e792b09015ddc099fe13
+  $fShowHeap :: GHC.Show.Show a => GHC.Show.Show (Heap.Heap a)
+  DFunId
+  {- Arity: 1, Strictness: <L,U(C(C1(C(U))),A,A)>m, Inline: CONLIKE,
+     Unfolding: DFun: @ a (v :: GHC.Show.Show a).
+                  @ (Heap.Heap a)
+                  (Heap.$fShowHeap_$cshowsPrec @ a v)
+                  (Heap.$fShowHeap_$cshow @ a v)
+                  (Heap.$fShowHeap_$cshowList @ a v) -}
+17e51f18c8ac4d51d1c265a92782c138
+  $fShowHeap1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+ee4e802d0ecad915a2fb661718ebd94b
+  $fShowHeap2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HP "#) -}
+97f8d21f7e6a26e88d09f8b57cc009c0
+  $fShowHeap3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+ba572e255d86bcbafcb15c2aeb72b12e
+  $fShowHeap4 :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.++ @ GHC.Types.Char Heap.$fShowHeap5) -}
+1136eb335c2543deba00752cdd4363b5
+  $fShowHeap5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Heap.$fShowHeap6) -}
+1d5dd25f5afc24d511aefe7fe265a273
+  $fShowHeap6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("EmptyHP"#) -}
+a45f09cd16b1e792b09015ddc099fe13
+  $fShowHeap_$cshow ::
+    GHC.Show.Show a => Heap.Heap a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dShow :: GHC.Show.Show a) (x :: Heap.Heap a) ->
+                 Heap.$fShowHeap_$s$cshowsPrec
+                   @ a
+                   x
+                   0#
+                   $dShow
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+a45f09cd16b1e792b09015ddc099fe13
+  $fShowHeap_$cshowList ::
+    GHC.Show.Show a => [Heap.Heap a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(C(U))),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (ls :: [Heap.Heap a])
+                   (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Heap.Heap a)
+                   (Heap.$fShowHeap_$cshowsPrec @ a $dShow Heap.$fShowHeap1)
+                   ls
+                   s) -}
+a45f09cd16b1e792b09015ddc099fe13
+  $fShowHeap_$cshowsPrec ::
+    GHC.Show.Show a => GHC.Types.Int -> Heap.Heap a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(C(U))),A,A)><L,1*U(U)><S,1*U>,
+     Unfolding: (\ @ a
+                   ($dShow :: GHC.Show.Show a)
+                   (ds :: GHC.Types.Int)
+                   (ds1 :: Heap.Heap a) ->
+                 case ds1 of wild {
+                   Heap.EmptyHP -> Heap.$fShowHeap4
+                   Heap.HP b1 b2 b3 b4
+                   -> case ds of wild1 { GHC.Types.I# x ->
+                      let {
+                        f :: GHC.Base.String -> GHC.Base.String
+                        = GHC.Show.showsPrec @ a $dShow Heap.$fShowHeap3 b1
+                      } in
+                      let {
+                        f1 :: GHC.Base.String -> GHC.Base.String
+                        = Heap.$fShowHeap_$s$cshowsPrec @ a b3 11# $dShow
+                      } in
+                      let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                        = Heap.$fShowHeap_$s$cshowsPrec @ a b4 11# $dShow
+                      } in
+                      let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                        = \ (x1 :: GHC.Base.String) ->
+                          GHC.CString.unpackAppendCString#
+                            Heap.$fShowHeap2
+                            (f (GHC.Types.:
+                                  @ GHC.Types.Char
+                                  GHC.Show.showSpace1
+                                  (case b2 of ww2 { GHC.Types.I# ww3 ->
+                                   case GHC.Show.$wshowSignedInt
+                                          11#
+                                          ww3
+                                          (GHC.Types.:
+                                             @ GHC.Types.Char
+                                             GHC.Show.showSpace1
+                                             (f1
+                                                (GHC.Types.:
+                                                   @ GHC.Types.Char
+                                                   GHC.Show.showSpace1
+                                                   (g x1)))) of ww4 { (#,#) ww5 ww6 ->
+                                   GHC.Types.: @ GHC.Types.Char ww5 ww6 } })))
+                      } in
+                      case GHC.Prim.>=# x 11# of lwild {
+                        DEFAULT -> p
+                        1#
+                        -> \ (x1 :: GHC.Base.String) ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.$fShow(,)4
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x1)) } } }) -}
+a45f09cd16b1e792b09015ddc099fe13
+  $fShowHeap_$s$cshowsPrec ::
+    Heap.Heap a -> GHC.Prim.Int# -> GHC.Show.Show a => GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U><L,U><L,U(C(C1(C(U))),A,A)> -}
+d82d03b328edeac92e6f15b342e4c428
+  $tc'EmptyHP :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13915021239112642903##
+                   12462668867447408772##
+                   Heap.$trModule
+                   Heap.$tc'EmptyHP2
+                   1#
+                   Heap.$tc'EmptyHP1) -}
+0bc1164cedbb5b7080a021e4f5a3cb1a
+  $tc'EmptyHP1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+793102861684eb1781b86b3e6a883f31
+  $tc'EmptyHP2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Heap.$tc'EmptyHP3) -}
+3e015119436ce27d132131e18c0c10b6
+  $tc'EmptyHP3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'EmptyHP"#) -}
+b7ea36003960ecc7efcd5275552a5b0d
+  $tc'HP :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9857389532616436329##
+                   7733042532149854666##
+                   Heap.$trModule
+                   Heap.$tc'HP2
+                   1#
+                   Heap.$tc'HP1) -}
+bc8cbf9713e8fa82fdb6f78ec1a20cf7
+  $tc'HP1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+7ffe155c31c5bc0779f4334707e40de7
+  $tc'HP2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Heap.$tc'HP3) -}
+a3cdb3cf8e69c15d8118822132df7c1c
+  $tc'HP3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'HP"#) -}
+26595bb844dfb8bf7fcc7d5ab7ad024b
+  $tcHeap :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1487499315299493209##
+                   4728885163619831368##
+                   Heap.$trModule
+                   Heap.$trModule1
+                   0#
+                   GHC.Types.krep$*Arr*) -}
+3a848ee29d167eda4ae6bc05e3c509f9
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Heap.$trModule3 Heap.$trModule1) -}
+9f89ad471951d3f989ced1e07bfe5cc3
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Heap.$trModule2) -}
+13d7df77ce87648d460602113ab19a07
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Heap"#) -}
+b4a6453b84e59a92962fa771532cbe34
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Heap.$trModule4) -}
+6b482a08e2eb1f5819b8ca9bc5d437ba
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+41178d9f6ddf624cb54b4c606a305901
+  $wmakeHP :: a -> Heap.Heap a -> Heap.Heap a -> Heap.Heap a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><S,1*U><S,1*U>m2,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   (w :: a)
+                   (w1 :: Heap.Heap a)
+                   (w2 :: Heap.Heap a) ->
+                 case w1 of wild {
+                   Heap.EmptyHP
+                   -> case w2 of wild1 {
+                        Heap.EmptyHP
+                        -> Heap.HP
+                             @ a
+                             w
+                             Heap.delHeap1
+                             (Heap.EmptyHP @ a)
+                             (Heap.EmptyHP @ a)
+                        Heap.HP ds rank ds1 ds2
+                        -> case rank of wild2 { GHC.Types.I# y ->
+                           case GHC.Prim.>=# 0# y of lwild {
+                             DEFAULT -> Heap.HP @ a w Heap.delHeap1 wild1 (Heap.EmptyHP @ a)
+                             1#
+                             -> Heap.HP
+                                  @ a
+                                  w
+                                  (GHC.Types.I# (GHC.Prim.+# y 1#))
+                                  (Heap.EmptyHP @ a)
+                                  wild1 } } }
+                   Heap.HP ds rank ds1 ds2
+                   -> case w2 of wild1 {
+                        Heap.EmptyHP
+                        -> case rank of wild2 { GHC.Types.I# x ->
+                           case GHC.Prim.>=# x 0# of lwild {
+                             DEFAULT
+                             -> Heap.HP
+                                  @ a
+                                  w
+                                  (GHC.Types.I# (GHC.Prim.+# x 1#))
+                                  (Heap.EmptyHP @ a)
+                                  wild
+                             1# -> Heap.HP @ a w Heap.delHeap1 wild (Heap.EmptyHP @ a) } }
+                        Heap.HP ds3 rank1 ds4 ds5
+                        -> case rank of wild2 { GHC.Types.I# x ->
+                           case rank1 of wild3 { GHC.Types.I# y ->
+                           case GHC.Prim.>=# x y of lwild {
+                             DEFAULT
+                             -> Heap.HP @ a w (GHC.Types.I# (GHC.Prim.+# x 1#)) wild1 wild
+                             1#
+                             -> Heap.HP
+                                  @ a
+                                  w
+                                  (GHC.Types.I# (GHC.Prim.+# y 1#))
+                                  wild
+                                  wild1 } } } } }) -}
+a45f09cd16b1e792b09015ddc099fe13
+  data Heap a
+    = EmptyHP | HP a GHC.Types.Int (Heap.Heap a) (Heap.Heap a)
+58f0f55642bd9d2597f09819654d0a00
+  delHeap :: GHC.Classes.Ord a => Heap.Heap a -> Heap.Heap a
+  {- Arity: 2, Strictness: <L,U(A,A,A,C(C1(U)),A,A,A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ($dOrd :: GHC.Classes.Ord a) (ds :: Heap.Heap a) ->
+                 case ds of wild {
+                   Heap.EmptyHP -> Heap.delHeap2 @ a
+                   Heap.HP element ds1 left right
+                   -> Heap.merge @ a $dOrd left right }) -}
+4db8fecd493909abb1e5e0808a5f5c64
+  delHeap1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+4016ae64c690a38e0b6ac4a380a36836
+  delHeap2 :: Heap.Heap a
+  {- Strictness: x -}
+e974317d5eed6d2d780e97b1ee292c2a
+  delHeap_$smerge ::
+    Heap.Heap a
+    -> a
+    -> Heap.Heap a
+    -> Heap.Heap a
+    -> GHC.Classes.Ord a => Heap.Heap a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S,1*U><L,U><L,U><L,U><L,U(A,A,A,C(C1(U)),A,A,A,A)>m2 -}
+60d434d080f2a19d40afe40912206602
+  delHeap_$smerge1 ::
+    a
+    -> GHC.Types.Int
+    -> Heap.Heap a
+    -> Heap.Heap a
+    -> Heap.Heap a
+    -> GHC.Classes.Ord a => Heap.Heap a
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <L,U><L,U><L,U><L,U><S,1*U><L,U(A,A,A,C(C1(U)),A,A,A,A)>m2 -}
+8e8f11aca0000f496c8ccc8f8d5950bb
+  delHeap_$smerge2 ::
+    Heap.Heap a
+    -> a
+    -> GHC.Types.Int
+    -> Heap.Heap a
+    -> Heap.Heap a
+    -> GHC.Classes.Ord a => Heap.Heap a
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <S,1*U><L,U><L,U><L,U><L,U><L,U(A,A,A,C(C1(U)),A,A,A,A)>m2 -}
+5f923357ee47b5dc86829feb7aa00b7c
+  emptyHeap :: Heap.Heap a
+  {- HasNoCafRefs,
+     Unfolding: InlineRule (0, True, True) Heap.EmptyHP -}
+11e9b6f8ef4b352ec455220514a2ec74
+  findHeap :: GHC.Classes.Ord a => Heap.Heap a -> a
+  {- Arity: 2, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a ($dOrd :: GHC.Classes.Ord a) -> Heap.findHeap1 @ a) -}
+51f097f9630caee00cad5ed9fecce66d
+  findHeap1 :: Heap.Heap a -> a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Heap.Heap a) ->
+                 case ds of wild {
+                   Heap.EmptyHP -> Heap.findHeap2 @ a
+                   Heap.HP element ds1 left right -> element }) -}
+7b3999f6d7ab56a90a71c4f63579c712
+  findHeap2 :: a
+  {- Strictness: x -}
+3d1953e691f52dc4fe7e547ae42a3be5
+  heapEmpty :: Heap.Heap a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: Heap.Heap a) ->
+                 case ds of wild {
+                   Heap.EmptyHP -> GHC.Types.True
+                   Heap.HP ipv ipv1 ipv2 ipv3 -> GHC.Types.False }) -}
+567f9353c693c4bfc74fdd62e3cf3c66
+  insHeap :: GHC.Classes.Ord a => a -> Heap.Heap a -> Heap.Heap a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,C(C1(U)),A,A,A,A)><L,U><S,1*U>m2,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (element :: a)
+                   (heap :: Heap.Heap a) ->
+                 Heap.delHeap_$smerge
+                   @ a
+                   heap
+                   element
+                   (Heap.EmptyHP @ a)
+                   (Heap.EmptyHP @ a)
+                   $dOrd) -}
+4cb0b57242971f8a620bafb1c850417f
+  merge ::
+    GHC.Classes.Ord a => Heap.Heap a -> Heap.Heap a -> Heap.Heap a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,C(C1(U)),A,A,A,A)><S,1*U><S,1*U>,
+     Unfolding: (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   (heap :: Heap.Heap a)
+                   (ds :: Heap.Heap a) ->
+                 case ds of wild {
+                   Heap.EmptyHP -> heap
+                   Heap.HP ipv ipv1 ipv2 ipv3
+                   -> case heap of wild1 {
+                        Heap.EmptyHP -> wild
+                        Heap.HP element1 ds1 left1 right1
+                        -> case GHC.Classes.<= @ a $dOrd element1 ipv of wild2 {
+                             GHC.Types.False
+                             -> Heap.$wmakeHP
+                                  @ a
+                                  ipv
+                                  ipv2
+                                  (Heap.delHeap_$smerge2 @ a ipv3 element1 ds1 left1 right1 $dOrd)
+                             GHC.Types.True
+                             -> Heap.$wmakeHP
+                                  @ a
+                                  element1
+                                  left1
+                                  (Heap.delHeap_$smerge1
+                                     @ a
+                                     ipv
+                                     ipv1
+                                     ipv2
+                                     ipv3
+                                     right1
+                                     $dOrd) } } }) -}
+instance [safe] GHC.Show.Show [Heap.Heap] = Heap.$fShowHeap
+"SC:$cshowsPrec0" forall @ a
+                         (sc :: Heap.Heap a)
+                         (sc1 :: GHC.Prim.Int#)
+                         (sc2 :: GHC.Show.Show a)
+  Heap.$fShowHeap_$cshowsPrec @ a sc2 (GHC.Types.I# sc1) sc
+  = Heap.$fShowHeap_$s$cshowsPrec @ a sc sc1 sc2
+"SC:merge0" forall @ a
+                   (sc :: Heap.Heap a)
+                   (sc1 :: a)
+                   (sc2 :: Heap.Heap a)
+                   (sc3 :: Heap.Heap a)
+                   (sc4 :: GHC.Classes.Ord a)
+  Heap.merge @ a sc4 (Heap.HP @ a sc1 Heap.delHeap1 sc2 sc3) sc
+  = Heap.delHeap_$smerge @ a sc sc1 sc2 sc3 sc4
+"SC:merge1" forall @ a
+                   (sc :: a)
+                   (sc1 :: GHC.Types.Int)
+                   (sc2 :: Heap.Heap a)
+                   (sc3 :: Heap.Heap a)
+                   (sc4 :: Heap.Heap a)
+                   (sc5 :: GHC.Classes.Ord a)
+  Heap.merge @ a sc5 sc4 (Heap.HP @ a sc sc1 sc2 sc3)
+  = Heap.delHeap_$smerge1 @ a sc sc1 sc2 sc3 sc4 sc5
+"SC:merge2" forall @ a
+                   (sc :: Heap.Heap a)
+                   (sc1 :: a)
+                   (sc2 :: GHC.Types.Int)
+                   (sc3 :: Heap.Heap a)
+                   (sc4 :: Heap.Heap a)
+                   (sc5 :: GHC.Classes.Ord a)
+  Heap.merge @ a sc5 (Heap.HP @ a sc1 sc2 sc3 sc4) sc
+  = Heap.delHeap_$smerge2 @ a sc sc1 sc2 sc3 sc4 sc5
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
