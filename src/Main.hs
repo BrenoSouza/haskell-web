@@ -10,7 +10,7 @@ import Network.HTTP.Types
 import Control.Monad.IO.Class
 import HeapImpl as Heap
 import TeamInfo as Team
-import System.Environment
+import System.Environment          (getEnv)
 import Control.Monad
 
 type Name = String
