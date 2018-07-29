@@ -1,1 +1,1 @@
-web: /app/.local/bin/heap-exe
+web: heap
