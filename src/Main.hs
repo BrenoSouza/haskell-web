@@ -8,88 +8,107 @@ import Control.Concurrent.MVar
 import qualified Data.Map.Strict as M
 import Network.HTTP.Types
 import Control.Monad.IO.Class
-import HeapImpl as Heap
-import TeamInfo as Team
-import System.Environment          (getEnv)
-import Control.Monad
-
-import Network.Wai.Middleware.Cors
+import HeapImpl
 
 type Name = String
 
-type HeapName = String
-
-allHeaps :: M.Map Name [HeapName]
-allHeaps = M.fromList
-    [ ("Heap1",
-        [ "1" , "2" , "3" , "4" , "5" , "6"]
-      )
-    , ("heap2",
-        [ "0" , "5" , "8" , "9" , "1" , "2"]
-      )
-    , ("heap3",
-        [ "7" , "2" , "4" , "1" , "5" , "0"]
-      )
+allArray :: M.Map Name [Int]
+allArray = M.fromList
+    [ 
+      ("array1", [0 , 5 , 8 , 9 , 1 , 2])
     ]
 
 validateName :: Name -> Bool
 validateName = const True
 
-validateHeaps :: [HeapName] -> Bool
-validateHeaps heaps = length heaps == 6
+validateType :: Name -> Bool
+validateType = const True
+
+validateArrays :: [Int] -> Bool
+validateArrays arrays = length arrays >= 1
 
 main :: IO ()
 main = do
-    heaps' <- newMVar allHeaps
+    array' <- newMVar allArray
 
-    port <- liftM read $ getEnv "PORT"
-    scotty port $ do
+    scotty 3000 $ do
 
-        middleware simpleCors
+        get "/arrays" $ do
+            array <- liftIO $ readMVar array'
+            json array
 
-        get "/heaps" $ do
-            heaps <- liftIO $ readMVar heaps'
-            json $ heaps
-
-        get "/heaps/:name" $ do
-            heaps <- liftIO $ readMVar heaps'
+        get "/arrays/:name" $ do
+            array <- liftIO $ readMVar array'
             name <- param "name"
-            json $ M.lookup name heaps
+            json $ M.lookup name array
 
-        post "/heaps/:name" $ do
+        get "/buildheap/:name/:heapType" $ do
+            array <- liftIO $ readMVar array'
             name <- param "name"
-            newHeaps <- jsonData
-            if not (validateName name && validateHeaps newHeaps)
+            --heapType <- param "heapType"
+
+            -- buildheap heapType name heaps
+            --if (heapType == "min") then
+            --    array <- HeapImpl.buildHeap (M.! heaps name) LT
+            --else do
+            --    array <- HeapImpl.buildHeap (M.! heaps name) GT
+
+            json $ M.lookup name array
+
+        post "/heapsort/min/:name" $ do
+            array <- liftIO $ readMVar array'
+            name <- param "name"
+    
+            updated <- liftIO $ modifyMVar array' $ \array ->
+                if M.member name array
+                   then return (M.update (\_ -> Just (HeapImpl.heapSort (array M.! name) LT)) name array, True) 
+                   else return (array, False) 
+            if updated
+                then status status200
+                else status status404
+
+        post "/heapsort/max/:name" $ do
+            array <- liftIO $ readMVar array'
+            name <- param "name"
+            
+            updated <- liftIO $ modifyMVar array' $ \array ->
+                if M.member name array
+                    then return (M.update (\_ -> Just (HeapImpl.heapSort (array M.! name) GT)) name array, True) 
+                    else return (array, False) 
+            if updated
+                then status status200
+                else status status404
+        
+
+        post "/arrays/:name" $ do
+            name <- param "name"
+            newArrays <- jsonData
+            if not (validateName name && validateArrays newArrays)
                then status status400
                else do
-                   created <- liftIO $ modifyMVar heaps' $ \heaps ->
-                       if M.member name heaps
-                          then return (heaps, False) 
-                          else return (M.insert name newHeaps heaps, True) 
+                   created <- liftIO $ modifyMVar array' $ \array ->
+                       if M.member name array
+                          then return (array, False) 
+                          else return (M.insert name newArrays array, True) 
                    if created
                       then status status200
                       else status status403
 
-        put "/heaps/:name" $ do
+        put "/arrays/:name" $ do
             name <- param "name"
-            newHeaps <- jsonData
-            if not (validateName name && validateHeaps newHeaps)
+            newArrays <- jsonData
+            if not (validateName name && validateArrays newArrays)
                then status status400
                else do
-                   updated <- liftIO $ modifyMVar heaps' $ \heaps ->
-                       if M.member name heaps
-                          then return (M.update (\_ -> Just newHeaps) name heaps, True) 
-                          else return (heaps, False) 
+                   updated <- liftIO $ modifyMVar array' $ \array ->
+                       if M.member name array
+                          then return (M.update (\_ -> Just newArrays) name array, True) 
+                          else return (array, False) 
                    if updated
                       then status status200
                       else status status404
 
-        delete "/heaps/:name" $ do
+        delete "/arrays/:name" $ do
             name <- param "name"
-            liftIO $ modifyMVar_ heaps' $ \heaps ->
-                return $ M.delete name heaps
-
-
-        get "/team" $ do
-            json $ Team.getMembers
-        
+            liftIO $ modifyMVar_ array' $ \array ->
+                return $ M.delete name array
