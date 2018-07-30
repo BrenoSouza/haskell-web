@@ -9,6 +9,7 @@ import qualified Data.Map.Strict as M
 import Network.HTTP.Types
 import Control.Monad.IO.Class
 import HeapImpl
+import System.Environment
 
 type Name = String
 
