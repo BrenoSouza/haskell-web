@@ -31,7 +31,9 @@ main :: IO ()
 main = do
     array' <- newMVar allArray
 
-    scotty 3000 $ do
+    port <- read <$> getEnv "PORT"
+
+    scotty port $ do
 
         get "/arrays" $ do
             array <- liftIO $ readMVar array'
